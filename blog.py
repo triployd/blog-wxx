@@ -33,7 +33,7 @@ class MainPage(BlogHandler):
   def get(self):
       self.write('Hello, Udacity!')
 
-##### blog stuff
+##### blog stuff Test
 
 def blog_key(name = 'default'):
     return db.Key.from_path('blogs', name)
