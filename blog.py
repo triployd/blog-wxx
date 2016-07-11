@@ -42,7 +42,7 @@ def add_post(ip, post):
     return str(post.key().id())
 
 def get_posts(update = False):
-    q = greetings = Post.all().order('-created').fetch(limit = 10)
+    q = Post.all().order('-created').fetch(limit = 10)
     mc_key = 'BLOGS' # memcache key
 
     posts, age = age_get(mc_key)
@@ -206,7 +206,7 @@ class PostPage(BlogHandler):
 
         post_key = 'POST_' + post_id
 
-        post, age = age_set(post_key)
+        post, age = age_get(post_key)
 
         #key = db.Key.from_path('Post', int(post_id), parent=blog_key())
         #post = db.get(key)
